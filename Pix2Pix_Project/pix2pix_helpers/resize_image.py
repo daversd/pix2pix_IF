@@ -2,10 +2,7 @@ from PIL import Image
 from PIL import ImageOps
 import os
 
-
 FOLDER = os.path.realpath("informed_plans")
-
-
 
 
 def scale_up():
@@ -32,6 +29,7 @@ def scale_up():
 
                 im.save(filepath)
 
+
 def scale_down():
     """This method scales up the images in the folder by 4
     (2,2) and then crops to the original size, expected to be 256x256
@@ -46,11 +44,11 @@ def scale_down():
                 width = int(width / 2)
                 height = int(height / 2)
 
-
                 im = im.resize((width, height), resample=Image.NEAREST)
-                im = ImageOps.expand(im, 64, fill=(255, 255,255))
+                im = ImageOps.expand(im, 64, fill=(255, 255, 255))
 
                 im.save(filepath)
 
+
 scale_up()
-#scale_down()
+# scale_down()
