@@ -26,7 +26,7 @@ from PIL import ImageOps
 # The name of the data folder
 # FOLDER_NAME = 'informed_plans'
 # The name of the model for this run
-MODEL_NAME = 'info_plans'
+MODEL_NAME = ''
 # Number of the model to be loaded (-1 loads the latest)
 LOAD_NUMBER = -1
 # The folder to save checkpoints to
@@ -129,8 +129,15 @@ if __name__ == '__main__':
     model.eval()
     load_model(model)
 
-    data_transforms = transforms.Compose(
-        [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+    # data_transforms = transforms.Compose(
+    #     [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+
+    transforms_list = []
+    transforms_list.append(transforms.RandomHorizontalFlip())
+    transforms_list += [transforms.ToTensor()]
+    transforms_list += [transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
+    data_transforms = transforms.Compose(transforms_list)
+
     i = 0
     # Iterate through test data set, for the lenght of the test sample
     scale_up(f"{SAVE_DIR}/source")
@@ -138,14 +145,21 @@ if __name__ == '__main__':
         for filename in filenames:
             filepath = os.path.join(dirpath, filename)
             im = Image.open(filepath).convert('RGB')
+
             im = data_transforms(im)
+
             im = im.view(1, 3, 256, 256)
+            # print(filename)
+            # print(im)
+
             model.set_input(im, single=True)
             model.test()
 
             visuals = model.get_current_visuals()
             save_path = os.path.join(f'{SAVE_DIR}/result', filename)
             util.save_generated(visuals, save_path)
+            # util.save_visuals(visuals, save_path)
+            # util.plot_visuals(visuals)
             i += 1
     scale_down(f"{SAVE_DIR}/source")
     scale_down(f"{SAVE_DIR}/result")

@@ -31,7 +31,7 @@ WRITE_LOGS = False
 # Determines if checkpoints should be saved
 SAVE_CKPTS = False
 # Determines if images should be saved for each checkpoint
-SAVE_IMG_CKPT = False
+SAVE_IMG_CKPT = True
 # Determines if the model should be exported (loads the latest checkpoint)
 EXPORT_MODEL = False
 
@@ -64,7 +64,7 @@ if SAVE_IMG_CKPT:
 
 BATCH_SIZE = 1
 # Will be split in two parts, must be even
-EPOCHS = 200
+EPOCHS = 50
 # Interval of steps between print logs
 PRINT_FREQ = 100
 # Interval of steps between tensorboard logs
