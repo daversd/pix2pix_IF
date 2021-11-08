@@ -4,7 +4,7 @@ import os
 Note: Backup your files before proceeding.
 """
 
-FOLDER = os.path.realpath("")
+FOLDER = os.path.realpath("sample_dataset")
 TARGET = "level "
 
 

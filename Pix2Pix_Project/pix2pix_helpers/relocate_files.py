@@ -5,8 +5,8 @@ import shutil
 """
 
 # Set the paths
-SOURCE = os.path.realpath("")
-TARGET = os.path.realpath("")
+SOURCE = os.path.realpath("sample_dataset/AB")
+TARGET = os.path.realpath("sample_dataset/combined")
 
 # Create the target directory if it doesn't exist
 if not os.path.isdir(TARGET):

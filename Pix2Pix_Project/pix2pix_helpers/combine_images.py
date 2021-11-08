@@ -14,11 +14,11 @@ from PIL import Image
 
 # Paths variables (change these to use your own dataset)
 # Represents the input image
-PATH_A = os.path.realpath("")
+PATH_A = os.path.realpath("sample_dataset/A")
 # Represents the target image
-PATH_B = os.path.realpath("")
+PATH_B = os.path.realpath("sample_dataset/B")
 # Represents the combined folder
-PATH_AB = os.path.realpath("")
+PATH_AB = os.path.realpath("sample_dataset/AB")
 
 # Function to write the combined images
 

@@ -21,24 +21,24 @@ import glob
 ##
 
 # Determines if the program must enter training mode
-TRAIN = False
+TRAIN = True
 # Determines if the program must enter testing mode (loads the latest checkpoint)
-TEST = False
+TEST = True
 # The number of samples for testing mode
-TEST_SAMPLE = 16
+TEST_SAMPLE = 10
 # Determines if tensorboard logs should be written to disk
 WRITE_LOGS = False
 # Determines if checkpoints should be saved
-SAVE_CKPTS = False
+SAVE_CKPTS = True
 # Determines if images should be saved for each checkpoint
 SAVE_IMG_CKPT = True
 # Determines if the model should be exported (loads the latest checkpoint)
 EXPORT_MODEL = False
 
 # The name of the data folder
-FOLDER_NAME = ''
+FOLDER_NAME = 'sample_dataset'
 # The name of the model for this run
-MODEL_NAME = ''
+MODEL_NAME = 'test_run1'
 # Number of the model to be loaded (-1 loads the latest)
 LOAD_NUMBER = -1
 # The folder to save checkpoints to
@@ -64,13 +64,13 @@ if SAVE_IMG_CKPT:
 
 BATCH_SIZE = 1
 # Will be split in two parts, must be even
-EPOCHS = 50
+EPOCHS = 10
 # Interval of steps between print logs
 PRINT_FREQ = 100
 # Interval of steps between tensorboard logs
 LOG_FREQ = 100
 # Interval of epochs between checkpoints (also saved test images)
-CKPT_FREQ = 20
+CKPT_FREQ = 2
 
 # Initialize the log writer
 if WRITE_LOGS:
