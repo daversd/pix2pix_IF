@@ -1,2 +1,2 @@
-# pix2pix_IF
- pix2pix Exercise made for InclusiveFutures 21 Workshop
+# Rear__ pix2pix implementation
+ pix2pix Exercise made 2021 Workshops
