@@ -26,7 +26,7 @@ from PIL import ImageOps
 # The name of the data folder
 # FOLDER_NAME = 'informed_plans'
 # The name of the model for this run
-MODEL_NAME = ''
+MODEL_NAME = 'test_run2'
 # Number of the model to be loaded (-1 loads the latest)
 LOAD_NUMBER = -1
 # The folder to save checkpoints to

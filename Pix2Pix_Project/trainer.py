@@ -38,7 +38,7 @@ EXPORT_MODEL = False
 # The name of the data folder
 FOLDER_NAME = 'sample_dataset'
 # The name of the model for this run
-MODEL_NAME = 'test_run1'
+MODEL_NAME = 'test_run2'
 # Number of the model to be loaded (-1 loads the latest)
 LOAD_NUMBER = -1
 # The folder to save checkpoints to
